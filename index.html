@@ -1,11 +1,61 @@
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="">
-	<script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="">
+    <script src="https://unpkg.com/htmx.org@1.9.4"
+        integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+        crossorigin="anonymous"></script>
+    <style>
+        code {
+            background-color: yellowgreen;
+        }
+
+        img {
+            width: 52px;
+            height: auto;
+        }
+        .red{
+            color: red;
+            transition: all ease-in 8s;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-<h2></h2>
+    <h2>HTMX to the rescue</h2>
+    <div style="background-color: yellowgreen;" hx-post="/put message">click this div. check Network for put message
+    </div>
+    <p hx-put="/triggerRequest" hx-trigger="mouseenter">
+        Hx-trigger attribute <br />
+        multiple possibilities. interval. Event from different element</p>
+    <code>hx-trigger="mouseenter"||"mouseenter once"</code>
+    <p hx-get="/control click" hx-trigger="click[ctrlKey]">
+        Trigger Filters
+        <code>hx-trigger="click[crtlKey]"</code>
+    </p>
+    <!--  <p hx-get="/news" hx-trigger="every 6s">hx-get</p> -->
+    <code>hx-trigger="every 6s" in console</code>
+    <br />
+    <button hx-get="/click">
+        class="htmx-indicator" makes this button invisible
+        <img class="htmx-indicator" src="btn.gif" alt="">
+    </button>
+    <br />
+    <form hx-post="/store">
+        <input type="text" hx-post="/valid" hx-trigger="change" hx-sync="closest form:abort">
+        <button type="submit">Submit hx-sync in Action</button>
+
+    </form>
+<div id="div1"class="red">CSS Transitions</div>
+<button hx-delete="/account--" hx-confirm="check attribute inheritance!!">
+    push js confirm
+</button>
+
+    <a href="/bxp/blog.html">hx-boost anchor and forms to AJAX Requests</a>
+
 </body>
+
 </html>

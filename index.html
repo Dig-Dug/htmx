@@ -21,6 +21,10 @@
             transition: all ease-in 8s;
             cursor: pointer;
         }
+        .fade-me-out.htmx-swapping {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
     </style>
 </head>
 
@@ -66,6 +70,11 @@
         name="example"
     >
 </form>
+<button class="fade-me-out"
+        hx-delete="/fade_out_demo"
+        hx-swap="outerHTML swap:1s">
+        Fade Me Out
+</button>
 </body>
 
 </html>

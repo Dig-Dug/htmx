@@ -1,1 +1,31 @@
+<script>
+    function con(){
+        console.log("sijfiaufio")
+        fetch("https://jsonformatter.org/img/Maria-Sharapova.jpg")
+        .then((res) => res.json())
+        .then((json) => console.log(json))
+        
+    }
+</script>
 <h1>AJAXed</h1>
+<form hx-post="/testWot">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="pwd">Password:</label>
+    <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+    <input type="submit">
+  </form>
+
+
+  <label hx-get="user"for="uname" hx-trigger="con"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit" onclick="con()">Login</button>
+
+      <p>3333@ipipoi</p>
+      <p>jjjjjjjjjjjjjj</p>
+  
+<a href="../index.html">back</a>

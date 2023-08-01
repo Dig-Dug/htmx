@@ -1,12 +1,16 @@
 <script>
-    function con(){
-        console.log("sijfiaufio")
-        fetch("https://jsonformatter.org/img/Maria-Sharapova.jpg")
-        .then((res) => res.json())
-        .then((json) => console.log(json))
-        
-    }
+    let express = require('express');
+    let app = express();
+    app.get('/', function (req,res){
+        res.send('HElkll--23245')
+    })
+    let server = app.liste(8081, function(){
+        let host = server.address().address
+        let port = server.address().port
+console.log("Example at http://%s:%s", host,port)
+    })
 </script>
+<body>
 <h1>AJAXed</h1>
 <form hx-post="/testWot">
     <label for="email">Email:</label>
@@ -23,9 +27,12 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit" onclick="con()">Login</button>
+      <button type="submit" onclick="conn()">Login</button>
 
       <p>3333@ipipoi</p>
       <p>jjjjjjjjjjjjjj</p>
   
 <a href="../index.html">back</a>
+
+</body>
+<!-- atQKWKLK3Fu2Dsq2d7q2aw -->
